@@ -12,6 +12,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 
+@NameQuery(name ="User.findByEmailId", query = "select u from user u where u.email:email")
 @Data
 @Entity
 @DynamicUpdate
