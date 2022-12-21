@@ -3,6 +3,7 @@ package com.inn.cafe.com.inn.cafe.POJO;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.NamedQuery;
 
 import javax.persistence.Entity;
 import javax.persistence.GenerationType;
@@ -12,7 +13,8 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 
-@NameQuery(name ="User.findByEmailId", query = "select u from user u where u.email:email")
+@NamedQuery(name ="User.findByEmailId", query = "select u from User u where u.email=:email")
+
 @Data
 @Entity
 @DynamicUpdate
